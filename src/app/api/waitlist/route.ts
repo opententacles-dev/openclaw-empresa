@@ -4,7 +4,7 @@ import { Resend } from 'resend'
 export const dynamic = 'force-dynamic'
 
 const NOTIFY_EMAIL = 'openclawproject07@gmail.com'
-const FROM = 'OpenTentacles <onboarding@resend.dev>'
+const FROM = 'OpenTentacles <noreply@opententacles.com>'
 
 function welcomeHtml(email: string): string {
   return `<!DOCTYPE html>
