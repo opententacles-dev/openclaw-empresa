@@ -23,14 +23,7 @@ function welcomeHtml(email: string): string {
           <!-- LOGO TOPO -->
           <tr>
             <td align="center" style="padding-bottom:32px;">
-              <table cellpadding="0" cellspacing="0">
-                <tr>
-                  <td style="background:#16162A;border:1px solid #2A2A3E;border-radius:16px;padding:16px 28px;">
-                    <span style="font-size:30px;vertical-align:middle;margin-right:10px;">&#x1F419;</span>
-                    <span style="font-size:22px;font-weight:700;color:#ffffff;letter-spacing:-0.5px;vertical-align:middle;">Open<span style="color:#E63946;">Tentacles</span></span>
-                  </td>
-                </tr>
-              </table>
+              <img src="https://opententacles.com/logo.png" alt="OpenTentacles" height="80" style="display:block;margin:0 auto;" />
             </td>
           </tr>
 
@@ -180,7 +173,7 @@ function notifyHtml(email: string): string {
 <body style="font-family:sans-serif;background:#f4f4f4;padding:32px 16px;">
   <div style="max-width:480px;margin:0 auto;background:#fff;border-radius:12px;padding:32px;border:1px solid #e0e0e0;">
     <h2 style="margin:0 0 16px;font-size:20px;color:#111;">
-      &#x1F419; Novo inscrito na waitlist
+      🐙 Novo inscrito na waitlist
     </h2>
     <p style="margin:0 0 8px;font-size:15px;color:#444;">
       <strong>E-mail:</strong> ${email}
@@ -214,7 +207,7 @@ export async function POST(req: NextRequest) {
     resend.emails.send({
       from: FROM,
       to: email,
-      subject: '&#x1F419; Voce esta na lista do OpenTentacles!',
+      subject: '🐙 Você está na lista do OpenTentacles!',
       html: welcomeHtml(email),
     }).then(r => {
       if (r.error) console.error('[waitlist] boas-vindas:', r.error)
