@@ -165,7 +165,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true })
   } catch (err) {
-    console.error('[waitlist] erro:', err)
-    return NextResponse.json({ error: 'Erro interno' }, { status: 500 })
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error('[waitlist] erro:', msg)
+    return NextResponse.json({ error: msg }, { status: 500 })
   }
 }
