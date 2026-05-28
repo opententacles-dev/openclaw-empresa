@@ -143,27 +143,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'E-mail inválido' }, { status: 400 })
     }
 
-    const [welcome, notify] = await Promise.all([
-      resend.emails.send({
-        from: FROM,
-        to: email,
-        subject: '🐙 Você está na lista do OpenTentacles!',
-        html: welcomeHtml(email),
-      }),
-      resend.emails.send({
-        from: FROM,
-        to: NOTIFY_EMAIL,
-        subject: `[Waitlist] Novo inscrito: ${email}`,
-        html: notifyHtml(email),
-      }),
-    ])
+    // Notificação interna — nunca bloqueia o retorno ao usuário
+    resend.emails.send({
+      from: FROM,
+      to: NOTIFY_EMAIL,
+      subject: `[Waitlist] Novo inscrito: ${email}`,
+      html: notifyHtml(email),
+    }).then(r => {
+      if (r.error) console.error('[waitlist] notificação:', r.error)
+    }).catch(e => console.error('[waitlist] notificação catch:', e))
 
-    if (welcome.error) {
-      console.error('[waitlist] erro ao enviar boas-vindas:', welcome.error)
-    }
-    if (notify.error) {
-      console.error('[waitlist] erro ao enviar notificação:', notify.error)
-    }
+    // Email de boas-vindas — falha silenciosa se domínio ainda não verificado
+    resend.emails.send({
+      from: FROM,
+      to: email,
+      subject: '🐙 Você está na lista do OpenTentacles!',
+      html: welcomeHtml(email),
+    }).then(r => {
+      if (r.error) console.error('[waitlist] boas-vindas:', r.error)
+    }).catch(e => console.error('[waitlist] boas-vindas catch:', e))
 
     return NextResponse.json({ ok: true })
   } catch (err) {
