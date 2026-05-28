@@ -28,7 +28,7 @@ export function CTAFinalSection() {
           </p>
 
           <motion.a
-            href="#criar"
+            href="/waitlist"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2.5 rounded-2xl bg-primary px-10 py-4 text-lg font-bold text-white shadow-2xl shadow-primary/30 hover:bg-primary/90 transition-colors"

@@ -100,7 +100,7 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <a href="#criar" className={`flex items-center justify-center rounded-xl py-3.5 text-sm font-semibold transition-colors ${plan.popular ? 'bg-primary text-white hover:bg-primary/90 shadow-md shadow-primary/25' : 'border border-border text-white hover:bg-muted'}`}>
+              <a href="/waitlist" className={`flex items-center justify-center rounded-xl py-3.5 text-sm font-semibold transition-colors ${plan.popular ? 'bg-primary text-white hover:bg-primary/90 shadow-md shadow-primary/25' : 'border border-border text-white hover:bg-muted'}`}>
                 {plan.cta}
               </a>
             </motion.div>

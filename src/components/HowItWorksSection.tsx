@@ -88,7 +88,7 @@ export function HowItWorksSection() {
           transition={{ delay: 0.55 }}
           className="mt-16 text-center"
         >
-          <a href="#criar" className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
+          <a href="/waitlist" className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
             Quero meu agente em 3 minutos
           </a>
           <p className="mt-3 text-sm text-muted-foreground">Sem cartão de crédito &middot; Cancele quando quiser</p>

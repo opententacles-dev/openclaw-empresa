@@ -43,7 +43,7 @@ export function Navbar() {
           <a href="#entrar" className="text-sm font-medium text-muted-foreground transition-colors hover:text-white px-3 py-2">
             Entrar
           </a>
-          <a href="#criar" className="flex items-center gap-1.5 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-primary/25 transition-colors hover:bg-primary/90">
+          <a href="/waitlist" className="flex items-center gap-1.5 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-primary/25 transition-colors hover:bg-primary/90">
             Criar conta grátis
             <ArrowRight className="h-4 w-4" />
           </a>
@@ -72,7 +72,7 @@ export function Navbar() {
               <a href="#entrar" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-base text-muted-foreground transition-colors hover:bg-muted hover:text-white">
                 Entrar
               </a>
-              <a href="#criar" onClick={() => setOpen(false)} className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-base font-semibold text-white">
+              <a href="/waitlist" onClick={() => setOpen(false)} className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-base font-semibold text-white">
                 Criar conta grátis <ArrowRight className="h-4 w-4" />
               </a>
             </div>

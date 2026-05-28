@@ -104,7 +104,7 @@ export function ComparisonSection() {
           transition={{ delay: 0.4 }}
           className="mt-10 text-center"
         >
-          <a href="#criar" className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
+          <a href="/waitlist" className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
             Escolher OpenTentacles agora
           </a>
         </motion.div>

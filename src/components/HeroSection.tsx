@@ -106,7 +106,7 @@ export function HeroSection() {
 
               <div className="mb-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
                 <motion.a
-                  href="#criar"
+                  href="/waitlist"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                   className="flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/30 transition-colors hover:bg-primary/90"

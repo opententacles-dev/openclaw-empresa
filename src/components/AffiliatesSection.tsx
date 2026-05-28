@@ -66,7 +66,7 @@ export function AffiliatesSection() {
             5 indicados no plano Pro = <span className="text-primary font-bold">R$247,50 por mês</span> automático
           </p>
           <p className="text-muted-foreground text-sm mb-6">Sem teto. Quanto mais você indica, mais você ganha.</p>
-          <a href="#criar" className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
+          <a href="/waitlist" className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
             Quero ser afiliado
           </a>
         </motion.div>
