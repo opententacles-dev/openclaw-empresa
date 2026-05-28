@@ -50,7 +50,7 @@ export function DifferentialsSection() {
               </span>
               <h3 className="text-xl sm:text-2xl font-bold text-white">Pronto em 3 minutos</h3>
               <p className="mt-1 text-muted-foreground text-base max-w-2xl">
-                Do zero ao agente online em menos tempo do que um cafe. Sem terminal, sem código, sem dor de cabeça. A solução mais rápida do mercado brasileiro de IA.
+                Do zero ao agente online em menos tempo do que um café. Sem terminal, sem código, sem dor de cabeça. A solução mais rápida do mercado global de IA.
               </p>
             </div>
           </div>

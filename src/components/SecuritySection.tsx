@@ -5,7 +5,7 @@ import { ShieldCheck, Lock, Eye, FileCheck, Server, Key } from 'lucide-react'
 const ITEMS = [
   { icon: Lock, title: 'Criptografia AES-256-GCM', description: 'Padrão militar para proteger cada credencial armazenada no sistema.' },
   { icon: Eye, title: 'Zero senhas no código', description: 'Nenhuma chave de API fica exposta no código-fonte ou nos logs.' },
-  { icon: FileCheck, title: 'Conformidade LGPD', description: 'Dados dos seus usuários tratados conforme a legislacao brasileira.' },
+  { icon: FileCheck, title: 'Conformidade LGPD', description: 'Dados dos seus usuários tratados conforme a legislação de protecao de dados.' },
   { icon: Key, title: '2FA obrigatório', description: 'Autenticacao em dois fatores em todos os acessos ao sistema.' },
   { icon: Server, title: 'Infraestrutura isolada', description: 'Cada agente roda em ambiente separado, sem compartilhamento de recursos.' },
   { icon: ShieldCheck, title: 'Auditoria completa', description: 'Log de cada acao realizada disponível para revisao a qualquer momento.' },

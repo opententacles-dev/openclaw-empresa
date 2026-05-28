@@ -4,43 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, CheckCircle2, Zap, Star, Shield, Gift, ChevronLeft, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useCurrency } from '@/hooks/useCurrency'
 
 const COUNTER_TARGET = 1_247
-
-const BENEFITS = [
-  {
-    icon: Gift,
-    color: 'text-yellow-400',
-    bg: 'bg-yellow-500/10 border-yellow-500/20',
-    title: 'R$5 de crédito grátis',
-    desc: 'Teste o agente no lançamento sem gastar nada. Nenhum cartão necessário.',
-  },
-  {
-    icon: Zap,
-    color: 'text-primary',
-    bg: 'bg-primary/10 border-primary/20',
-    title: 'Acesso beta exclusivo',
-    desc: 'Entre antes de todo mundo e explore todas as funcionalidades antes do lançamento público.',
-  },
-  {
-    icon: Star,
-    color: 'text-amber-400',
-    bg: 'bg-amber-500/10 border-amber-500/20',
-    title: 'Preço fundador',
-    desc: 'Desconto especial e permanente para os primeiros inscritos. Nunca paga preço cheio.',
-  },
-  {
-    icon: Shield,
-    color: 'text-green-400',
-    bg: 'bg-green-500/10 border-green-500/20',
-    title: 'Suporte VIP',
-    desc: 'Acesso direto à equipe no lançamento — sua dúvida respondida em minutos.',
-  },
-]
-
 const AVATAR_COLORS = ['#E63946', '#8B5CF6', '#25D366', '#F59E0B', '#2AABEE']
 
 export default function WaitlistPage() {
+  const currency = useCurrency()
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -86,12 +56,43 @@ export default function WaitlistPage() {
     setLoading(false)
   }
 
+  const BENEFITS = [
+    {
+      icon: Gift,
+      color: 'text-yellow-400',
+      bg: 'bg-yellow-500/10 border-yellow-500/20',
+      title: `${currency.symbol}${currency.prices.credit} de crédito grátis`,
+      desc: 'Teste o agente no lançamento sem gastar nada. Nenhum cartão necessário.',
+    },
+    {
+      icon: Zap,
+      color: 'text-primary',
+      bg: 'bg-primary/10 border-primary/20',
+      title: 'Acesso beta exclusivo',
+      desc: 'Entre antes de todo mundo e explore todas as funcionalidades primeiro.',
+    },
+    {
+      icon: Star,
+      color: 'text-amber-400',
+      bg: 'bg-amber-500/10 border-amber-500/20',
+      title: 'Preço fundador',
+      desc: 'Desconto especial e permanente para os primeiros inscritos. Nunca paga preço cheio.',
+    },
+    {
+      icon: Shield,
+      color: 'text-green-400',
+      bg: 'bg-green-500/10 border-green-500/20',
+      title: 'Suporte VIP',
+      desc: 'Acesso direto à equipe no lançamento — sua dúvida respondida em minutos.',
+    },
+  ]
+
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="flex min-h-screen flex-col bg-background">
       {/* Background glow */}
       <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute left-1/2 top-0 h-[700px] w-[1000px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-primary/[0.07] blur-[140px]" />
-        <div className="absolute right-0 bottom-0 h-[400px] w-[600px] translate-x-1/3 translate-y-1/3 rounded-full bg-violet-500/[0.04] blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-[400px] w-[600px] translate-x-1/3 translate-y-1/3 rounded-full bg-violet-500/[0.04] blur-[120px]" />
       </div>
 
       {/* Minimal header */}
@@ -134,7 +135,7 @@ export default function WaitlistPage() {
           >
             A revolução dos<br />
             agentes de IA<br />
-            <span className="text-primary">chegou ao Brasil.</span>
+            <span className="text-primary">chegou.</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -148,8 +149,8 @@ export default function WaitlistPage() {
             <span className="font-medium text-white">OpenClaw</span> e{' '}
             <span className="font-medium text-white">Hermes</span> exigem horas de
             configuração técnica, o{' '}
-            <span className="font-semibold text-primary">OpenTentacles</span> é a primeira
-            plataforma brasileira que hospeda agentes de IA com{' '}
+            <span className="font-semibold text-primary">OpenTentacles</span> é a
+            plataforma que hospeda agentes de IA com{' '}
             <span className="font-semibold text-white">1 clique</span>.
           </motion.p>
 
@@ -218,6 +219,7 @@ export default function WaitlistPage() {
                       )}
                     </motion.button>
                   </form>
+
                   {error && (
                     <motion.p
                       initial={{ opacity: 0 }}
@@ -280,7 +282,7 @@ export default function WaitlistPage() {
                     <b.icon className={`h-4 w-4 ${b.color}`} />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">{b.title}</p>
+                    <p className="text-sm font-semibold text-white" suppressHydrationWarning>{b.title}</p>
                     <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{b.desc}</p>
                   </div>
                 </motion.div>
@@ -294,7 +296,7 @@ export default function WaitlistPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="mt-10 rounded-2xl border border-border bg-card p-6"
+            className="mt-10 rounded-2xl border border-border bg-card p-5 sm:p-6"
           >
             <p className="mb-5 text-sm font-semibold text-white">
               Por que OpenTentacles é diferente?
@@ -302,7 +304,7 @@ export default function WaitlistPage() {
             <div className="grid gap-3 sm:grid-cols-3">
               <div className="rounded-xl border border-red-500/15 bg-red-500/5 p-4 text-center">
                 <p className="mb-2 font-semibold text-red-400">OpenClaw</p>
-                <ul className="space-y-1 text-left">
+                <ul className="space-y-1.5 text-left">
                   <li className="flex items-start gap-1.5 text-xs text-muted-foreground">
                     <X className="mt-0.5 h-3 w-3 shrink-0 text-red-500" />
                     Instalação manual em VPS própria
@@ -313,13 +315,13 @@ export default function WaitlistPage() {
                   </li>
                   <li className="flex items-start gap-1.5 text-xs text-muted-foreground">
                     <X className="mt-0.5 h-3 w-3 shrink-0 text-red-500" />
-                    Sem suporte em português
+                    Sem hospedagem gerenciada
                   </li>
                 </ul>
               </div>
               <div className="rounded-xl border border-orange-500/15 bg-orange-500/5 p-4 text-center">
                 <p className="mb-2 font-semibold text-orange-400">Hermes</p>
-                <ul className="space-y-1 text-left">
+                <ul className="space-y-1.5 text-left">
                   <li className="flex items-start gap-1.5 text-xs text-muted-foreground">
                     <X className="mt-0.5 h-3 w-3 shrink-0 text-orange-500" />
                     Curva técnica elevada
@@ -330,13 +332,13 @@ export default function WaitlistPage() {
                   </li>
                   <li className="flex items-start gap-1.5 text-xs text-muted-foreground">
                     <X className="mt-0.5 h-3 w-3 shrink-0 text-orange-500" />
-                    Sem hospedagem gerenciada
+                    Sem suporte multilíngue nativo
                   </li>
                 </ul>
               </div>
               <div className="rounded-xl border border-primary/30 bg-primary/10 p-4 text-center ring-1 ring-primary/20">
                 <p className="mb-2 font-semibold text-primary">OpenTentacles ✓</p>
-                <ul className="space-y-1 text-left">
+                <ul className="space-y-1.5 text-left">
                   <li className="flex items-start gap-1.5 text-xs text-muted-foreground">
                     <CheckCircle2 className="mt-0.5 h-3 w-3 shrink-0 text-green-400" />
                     1 clique, pronto em 3 minutos

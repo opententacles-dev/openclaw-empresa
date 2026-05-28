@@ -6,10 +6,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Agente de IA Pronto em 3 Minutos | OpenTentacles",
-  description: "Crie seu agente de IA para WhatsApp, Telegram e Instagram sem codigo. OpenTentacles hospeda OpenClaw com 1 clique. A partir de R$49/mes. Comece gratis.",
+  description: "Crie seu agente de IA para WhatsApp, Telegram e Instagram sem código. OpenTentacles hospeda OpenClaw com 1 clique. A partir de R$49/mes. Comece grátis.",
   openGraph: {
     title: "Agente de IA Pronto em 3 Minutos | OpenTentacles",
-    description: "Crie seu agente de IA para WhatsApp sem codigo. A partir de R$49/mes.",
+    description: "Crie seu agente de IA para WhatsApp sem código. A partir de R$49/mes.",
     url: "https://opententacles.com",
     siteName: "OpenTentacles",
     locale: "pt_BR",

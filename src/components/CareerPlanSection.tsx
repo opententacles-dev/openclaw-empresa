@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import { TrendingUp, Award, Wallet, Target } from 'lucide-react'
 
 const LEVELS = [
-  { label: 'Iniciante', range: 'ate R$15/mês', color: 'text-muted-foreground', dot: 'bg-muted-foreground' },
-  { label: 'Crescimento', range: 'ate R$150/mês', color: 'text-blue-400', dot: 'bg-blue-400' },
-  { label: 'Avancado', range: 'ate R$1.500/mês', color: 'text-primary', dot: 'bg-primary' },
-  { label: 'Elite', range: 'ate R$15.000/mês', color: 'text-yellow-400', dot: 'bg-yellow-400' },
+  { label: 'Iniciante', range: 'até R$15/mês', color: 'text-muted-foreground', dot: 'bg-muted-foreground' },
+  { label: 'Crescimento', range: 'até R$150/mês', color: 'text-blue-400', dot: 'bg-blue-400' },
+  { label: 'Avançado', range: 'até R$1.500/mês', color: 'text-primary', dot: 'bg-primary' },
+  { label: 'Elite', range: 'até R$15.000/mês', color: 'text-yellow-400', dot: 'bg-yellow-400' },
 ]
 
 export function CareerPlanSection() {
@@ -27,14 +27,14 @@ export function CareerPlanSection() {
               Seu negócio cresce.<br />Sua renda também.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              O Plano Carreira acumula automaticamente 2% da sua assinatura e 8% das suas comissoes em um fundo individual. Quanto mais você usa e indica, mais acumula — sem limite.
+              O Plano Carreira acumula automaticamente 2% da sua assinatura e 8% das suas comissões em um fundo individual. Quanto mais você usa e indica, mais acumula — sem limite.
             </p>
             <div className="grid grid-cols-2 gap-4">
               {[
                 { icon: TrendingUp, label: '2%', desc: 'da assinatura mensal' },
-                { icon: Award, label: '8%', desc: 'sobre comissoes geradas' },
+                { icon: Award, label: '8%', desc: 'sobre comissões geradas' },
                 { icon: Wallet, label: '3 formas', desc: 'de resgate disponível' },
-                { icon: Target, label: 'Sem limite', desc: 'de acúmulo maximo' },
+                { icon: Target, label: 'Sem limite', desc: 'de acúmulo máximo' },
               ].map((item, i) => (
                 <div key={i} className="rounded-xl border border-border bg-card p-4">
                   <item.icon className="mb-2 h-5 w-5 text-primary" />

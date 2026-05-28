@@ -4,7 +4,7 @@ import { XCircle, CheckCircle2 } from 'lucide-react'
 
 const PAINS = [
   'Terminal, SSH, VPS e Docker - dias ate funcionar',
-  'R$200-700/mês variavel - conta muda todo mês',
+  'R$200-700/mês variável - conta muda todo mês',
   'Servidor cai? Você resolve - mesmo as 3h da manha',
   'Suporte so em inglês - Google Tradutor sempre aberto',
   'Credenciais expostas no código - risco de segurança real',
