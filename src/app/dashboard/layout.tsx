@@ -8,7 +8,7 @@ import { Bot, Settings, LogOut, Menu, X, ChevronRight, Shield } from 'lucide-rea
 
 type User = { id: string; name: string; email: string; plan: string }
 const AuthContext = createContext<{ user: User | null }>({ user: null })
-export const useAuth = () => useContext(AuthContext)
+const useAuth = () => useContext(AuthContext)
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
