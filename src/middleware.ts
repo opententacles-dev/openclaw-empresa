@@ -18,7 +18,7 @@ export function middleware(req: NextRequest) {
   }
 
   // Dashboard routes (JWT-based)
-  if (pathname === '/login') return NextResponse.next()
+  if (pathname === '/login' || pathname === '/api/auth/login' || pathname === '/api/auth/logout') return NextResponse.next()
   if (pathname.startsWith('/dashboard') || pathname.startsWith('/api/dashboard') || pathname.startsWith('/api/auth')) {
     const jwt = req.cookies.get('ot_jwt')?.value
     if (!jwt) {
