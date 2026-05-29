@@ -58,7 +58,7 @@ function TabChat({ agent }: { agent: Agent }) {
         ) : (
           <div className="bg-white/5 border border-white/10 rounded-xl p-4">
             <p className="text-white/60 text-sm font-medium mb-1">Configure o canal primeiro</p>
-            <p className="text-white/35 text-xs">Va para a aba "Canais" e adicione o token do Telegram para ativar o chat.</p>
+            <p className="text-white/35 text-xs">Va para a aba Canais e adicione o token do Telegram para ativar o chat.</p>
           </div>
         )}
       </div>
