@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import {
   Bot, MessageSquare, Plug, Zap, FolderOpen, Brain, Settings,
   ArrowLeft, Loader2, Save, Trash2, CheckCircle, Upload, FileText,
-  Calendar, Eye, Edit3, RefreshCw, AlertTriangle, Plus
+  Calendar, Eye, Edit3, AlertTriangle
 } from 'lucide-react'
 
 type Agent = {
@@ -299,8 +299,7 @@ function TabMemory({ agent }: { agent: Agent }) {
   const [logContent, setLogContent] = useState('')
   const [loadingLog, setLoadingLog] = useState(false)
   const [view, setView] = useState<'main' | 'log'>('main')
-  const { saving, saved, save } = useFileSave(agent.container_id)
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetch('/api/dashboard/agents/' + agent.container_id + '/files')
       .then(r => r.json()).then(setFilesData)
