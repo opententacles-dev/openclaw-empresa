@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import { Navbar } from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Política de Privacidade | OpenTentacles',
