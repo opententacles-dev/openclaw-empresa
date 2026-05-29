@@ -4,7 +4,7 @@ import { useState, useEffect, createContext, useContext } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Bot, LayoutDashboard, Settings, LogOut, Menu, X, ChevronRight, Shield } from 'lucide-react'
+import { Bot, Settings, LogOut, Menu, X, ChevronRight, Shield } from 'lucide-react'
 
 type User = { id: string; name: string; email: string; plan: string }
 const AuthContext = createContext<{ user: User | null }>({ user: null })

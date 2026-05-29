@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Bot, MessageSquare, Plug, Zap, FolderOpen, Brain, Settings, ArrowLeft, Loader2, Save, Trash2, CheckCircle, ExternalLink } from 'lucide-react'
+import { Bot, MessageSquare, Plug, Zap, FolderOpen, Brain, Settings, ArrowLeft, Loader2, Save, Trash2, CheckCircle } from 'lucide-react'
 
 type Agent = {
   id: string; name: string; container_id: string; status: string
@@ -100,7 +100,7 @@ function TabChannels({ agent, onUpdate }: { agent: Agent; onUpdate: (data: Parti
           </div>
           {agent.telegram_token && <div className="ml-auto flex items-center gap-1.5"><div className="w-1.5 h-1.5 rounded-full bg-green-400" /><span className="text-xs text-green-400">Ativo</span></div>}
         </div>
-        <p className="text-white/50 text-sm mb-4">Cole o token do bot do Telegram abaixo. Para criar um bot, fale com o <a href="https://t.me/BotFather" target="_blank" className="text-[#229ED9] hover:underline">@BotFather</a>.</p>
+        <p className="text-white/50 text-sm mb-4">Cole o token do bot do Telegram abaixo. Para criar um bot, fale com o <a href="https://t.me/BotFather" target="_blank" className="text-[#229ED9] hover:underline">@BotFather no Telegram</a>.</p>
         <div className="space-y-3">
           <input
             type="text"

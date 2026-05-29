@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Bot, Plus, MessageSquare, Zap, Clock, ChevronRight } from 'lucide-react'
+import { Bot, Plus, MessageSquare, Clock, ChevronRight } from 'lucide-react'
 
 type Agent = {
   id: string
