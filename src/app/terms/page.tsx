@@ -80,7 +80,7 @@ export default function TermsPage() {
           </Section>
 
           <Section title="8. Limitação de Responsabilidade">
-            <p>A plataforma é fornecida "no estado em que se encontra". A OpenTentacles não se responsabiliza por perdas de dados, interrupções de serviço, danos indiretos ou pelo conteúdo gerado pelos agentes de IA configurados pelos usuários.</p>
+            <p>A plataforma é fornecida &ldquo;no estado em que se encontra&rdquo;. A OpenTentacles não se responsabiliza por perdas de dados, interrupções de serviço, danos indiretos ou pelo conteúdo gerado pelos agentes de IA configurados pelos usuários.</p>
           </Section>
 
           <Section title="9. Modificações nos Termos">
