@@ -1,15 +1,12 @@
 'use client'
 
-import { useState, useEffect, createContext, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Bot, Settings, LogOut, Menu, X, ChevronRight, Shield } from 'lucide-react'
 
 type User = { id: string; name: string; email: string; plan: string }
-const AuthContext = createContext<{ user: User | null }>({ user: null })
-const useAuth = () => useContext(AuthContext)
-
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
@@ -81,8 +78,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   )
 
   return (
-    <AuthContext.Provider value={{ user }}>
-      <div className="min-h-screen bg-[#0F0F1A] flex">
+    <div className="min-h-screen bg-[#0F0F1A] flex">
         {/* Desktop sidebar */}
         <aside className="hidden md:flex w-56 bg-white/[0.02] border-r border-white/8 flex-col fixed h-full z-10">
           <Sidebar />
@@ -115,6 +111,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           </div>
         </main>
       </div>
-    </AuthContext.Provider>
+    
   )
 }
